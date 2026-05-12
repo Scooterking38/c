@@ -1,8 +1,9 @@
-#include <stdio.h> // Includes the "Standard Input Output" library
+#define EXPORT __declspec(dllexport)
 
-int main() {
+EXPORT int run_test() {
     int x = 0;
-    for (int n = 0, i <= 10000, n++) {
+    // Use semicolons (;) and keep the variable name (n) consistent
+    for (int n = 0; n <= 10000; n++) {
         x++;
     }
     return x;
