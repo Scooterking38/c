@@ -2,8 +2,8 @@
 
 int main() {
     int x = 0;
-    for (int n = 0, i == n, n++) {
-        x++
+    for (int n = 0, i <= 10000, n++) {
+        x++;
     }
     return x;
 }
