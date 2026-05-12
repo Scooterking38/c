@@ -1,6 +1,9 @@
 #include <stdio.h> // Includes the "Standard Input Output" library
 
 int main() {
-    printf("Hello World!\n"); // \n is a new line
-    return 0; // 0 means "The program finished successfully"
+    int x = 0
+    for (int n = 0, i == n, n++) {
+        x++
+    }
+    return x
 }
