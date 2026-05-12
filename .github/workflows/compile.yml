@@ -1,0 +1,30 @@
+name: Compile C Project
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      # 1. Check out the source code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Compile main.c to a DLL using GCC (MinGW is pre-installed on Windows runners)
+      - name: Compile C to DLL
+        run: |
+          gcc -shared -o my_library.dll main.c
+
+      # 3. Upload the compiled DLL as a GitHub Artifact
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-c-library
+          path: my_library.dll
+          retention-days: 5
